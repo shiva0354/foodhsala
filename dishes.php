@@ -24,13 +24,14 @@ include './Templates/message.php';
                 $item_price = $item['price'];
                 $item_name = $item['name'];
                 $item_type = $item['type'];
+                $item_image = $item['image'];
                 $item_restaurant = $item['restaurant_id'];
                 $item_restaurant_name = $item['restaurant_name'];
             ?>
                 <div class="col-md-3 col-sm-12 mb-3">
                     <div class="card" style="width: 18rem;">
                         <span class="badge bg-warning text-dark dish-type"><?= $item_type ?></span>
-                        <img src="./assets/images/carousel/carousel-1.jpg" class="card-img-top" alt="...">
+                        <img src="./assets/images/<?= $item_image ?>" class="card-img-top dish-img" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?= $item_name ?></h5>
                             <span class="fs-5 text-info">Starts From ₹<?= $item_price ?>/-</span>

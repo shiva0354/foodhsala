@@ -39,6 +39,7 @@ include './Templates/message.php';
                 $item_name = $item['name'];
                 $item_price = $item['price'];
                 $item_name = $item['name'];
+                $item_image = $item['image'];
                 $item_type = $item['type'];
                 $item_restaurant = $item['restaurant_id'];
                 $item_restaurant_name = $item['restaurant_name'];
@@ -46,7 +47,7 @@ include './Templates/message.php';
                 <div class="item">
                     <div class="card" style="width: 18rem;">
                         <span class="badge bg-warning text-dark dish-type"><?= $item_type ?></span>
-                        <img src="./assets/images/carousel/carousel-1.jpg" class="card-img-top" alt="...">
+                        <img src="./assets/images/<?= $item_image ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?= $item_name ?></h5>
                             <span class="fs-5 text-info">Starts From ₹<?= $item_price ?>/-</span>

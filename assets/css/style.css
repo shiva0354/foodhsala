@@ -102,7 +102,13 @@
 #owl-restaurant .item img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 150px;
+}
+
+.dish-img {
+    display: block;
+    width: 100%;
+    height: 150px;
 }
 
 /* Login Page */
