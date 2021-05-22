@@ -57,24 +57,25 @@ include './Templates/header.php';
                         $item_price = $item['price'];
 
                         $total_amount += $item_price;
-                    }
+
                 ?>
-                    <div class="card p-2 mb-2">
-                        <div class="menu-box">
-                            <img src="./assets/images/<?= $item_image ?>" alt="menu pic" class="featured-pic">
-                            <span class="badge bg-warning text-dark veg-non-veg"><?= $item_type ?></span>
-                            <div class="menu-title ">
-                                <h5 class="title bg-secondry">
-                                    <span><?= $item_name ?></span>
-                                </h5>
-                                <span class="float-end fs-5">
-                                    ₹<?= $item_price ?>
-                                </span>
-                                <p><?= $item_description ?></p>
+                        <div class="card p-2 mb-2">
+                            <div class="menu-box">
+                                <img src="./assets/images/<?= $item_image ?>" alt="menu pic" class="featured-pic">
+                                <span class="badge bg-warning text-dark veg-non-veg"><?= $item_type ?></span>
+                                <div class="menu-title ">
+                                    <h5 class="title bg-secondry">
+                                        <span><?= $item_name ?></span>
+                                    </h5>
+                                    <span class="float-end fs-5">
+                                        ₹<?= $item_price ?>
+                                    </span>
+                                    <p><?= $item_description ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php } ?>
+                <?php }
+                } ?>
             </div>
             <div class="col-md-8 order-md-1">
                 <span class="float-end fs-4 text-primary">Total ₹ <?= $total_amount ?>/-</span>

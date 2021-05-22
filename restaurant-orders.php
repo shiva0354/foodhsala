@@ -46,18 +46,18 @@ include './Templates/message.php';
                         $pin = $order->pin;
                         $status = $order->status;
                         $total_amount = $order->total_amount;
-                    }
                 ?>
-                    <tr>
-                        <th scope="row"><?= $id ?></th>
-                        <td><?= $name ?></td>
-                        <td><?= $address ?>, <?= $city ?>, <?= $pin ?></td>
-                        <td>₹ <?= $total_amount ?></td>
-                        <td><?= $status ?></td>
-                        <td><a href="./restaurant-order-detail.php?id=<?= $id ?>" class="btn btn-block btn-primary">View</a></td>
-                        <td><button class="btn btn-block btn-primary">Mark As Complete</button></td>
-                    </tr>
-                <?php  } ?>
+                        <tr>
+                            <th scope="row"><?= $id ?></th>
+                            <td><?= $name ?></td>
+                            <td><?= $address ?>, <?= $city ?>, <?= $pin ?></td>
+                            <td>₹ <?= $total_amount ?></td>
+                            <td><?= $status ?></td>
+                            <td><a href="./restaurant-order-detail.php?id=<?= $id ?>" class="btn btn-block btn-primary">View</a></td>
+                            <td><button class="btn btn-block btn-primary">Mark As Complete</button></td>
+                        </tr>
+                <?php }
+                } ?>
             </tbody>
         </table>
     </div>
