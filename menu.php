@@ -3,6 +3,9 @@ session_start();
 
 use Controllers\UserItemController;
 
+require './Database/Db.php';
+require './Models/Item.php';
+require './Models/Restaurant.php';
 require './Controllers/UserItemController.php';
 spl_autoload_register();
 

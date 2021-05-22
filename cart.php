@@ -4,13 +4,18 @@ session_start();
 use Controllers\BackController;
 use Controllers\CartController;
 
+require './Database/Db.php';
+require './Models/Item.php';
+require './Models/Order.php';
+require './Models/OrderItem.php';
 require './Controllers/CartController.php';
 require './Controllers/BackController.php';
 
 spl_autoload_register();
 
 if (!isset($_SESSION['cart'])) {
-    BackController::goBack(['Cart is empty, order your food now']);
+    $_SESSION['error'] = ['Cart is empty, order your food now'];
+    header("Location:./");
 }
 
 $items = $_SESSION['cart'];
@@ -43,14 +48,16 @@ include './Templates/header.php';
                 <?php
 
                 $total_amount = 0;
-                foreach ($items  as $item) {
-                    $item_name = $item['name'];
-                    $item_type = $item['type'];
-                    $item_image = $item['image'];
-                    $item_description = $item['description'];
-                    $item_price = $item['price'];
+                if ($items) {
+                    foreach ($items  as $item) {
+                        $item_name = $item['name'];
+                        $item_type = $item['type'];
+                        $item_image = $item['image'];
+                        $item_description = $item['description'];
+                        $item_price = $item['price'];
 
-                    $total_amount += $item_price;
+                        $total_amount += $item_price;
+                    }
                 ?>
                     <div class="card p-2 mb-2">
                         <div class="menu-box">

@@ -4,8 +4,13 @@ session_start();
 use Controllers\BackController;
 use Controllers\CartController;
 
+require './Database/Db.php';
+require './Models/Item.php';
+require './Models/Order.php';
+require './Models/OrderItem.php';
 require './Controllers/CartController.php';
 require './Controllers/BackController.php';
+require './Controllers/AuthController.php';
 spl_autoload_register();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {

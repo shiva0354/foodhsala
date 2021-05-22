@@ -4,6 +4,7 @@ session_start();
 
 use Models\Item;
 
+require './Database/Db.php';
 require './Models/Item.php';
 spl_autoload_register();
 

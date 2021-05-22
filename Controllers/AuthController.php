@@ -23,7 +23,6 @@ class AuthController
         if (!password_verify($password, $user->password)) {
             BackController::goBack(["Invalid Mobile or Password"]);
         }
-        session_start();
         $_SESSION['user'] = serialize($user);
         header("Location:./");
         exit();
@@ -44,7 +43,6 @@ class AuthController
         if (!password_verify($password, $restaurant->password)) {
             BackController::goBack(["Invalid Mobile or Password"]);
         }
-        session_start();
         $_SESSION['restaurant'] = serialize($restaurant);
         header("Location:./restaurant.php");
         exit();

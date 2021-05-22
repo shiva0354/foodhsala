@@ -3,7 +3,11 @@ require './restaurant-session.php';
 
 use Controllers\RestaurantOrderController;
 
+require './Database/Db.php';
+require './Models/Order.php';
+require './Models/Restaurant.php';
 require './Controllers/RestaurantOrderController.php';
+require './Controllers/AuthController.php';
 spl_autoload_register();
 
 $restaurant = unserialize($_SESSION['restaurant']);
@@ -36,14 +40,16 @@ include './Templates/message.php';
             </thead>
             <tbody>
                 <?php
-                foreach ($orders as $order) {
-                    $id = $order->id;
-                    $name = $order->name;
-                    $address = $order->address;
-                    $city = $order->city;
-                    $pin = $order->pin;
-                    $status = $order->status;
-                    $total_amount = $order->total_amount;
+                if ($orders) {
+                    foreach ($orders as $order) {
+                        $id = $order->id;
+                        $name = $order->name;
+                        $address = $order->address;
+                        $city = $order->city;
+                        $pin = $order->pin;
+                        $status = $order->status;
+                        $total_amount = $order->total_amount;
+                    }
                 ?>
                     <tr>
                         <th scope="row"><?= $id ?></th>

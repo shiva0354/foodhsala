@@ -1,10 +1,9 @@
-<!-- fetch random dishes with restaurant name and price with image and display -->
-<!-- Add search to find dish from search bar -->
 <?php
 session_start();
 
 use Models\Item;
 
+require './Database/Db.php';
 require './Models/Item.php';
 spl_autoload_register();
 $items = Item::all();
@@ -50,8 +49,8 @@ include './Templates/message.php';
                         <img src="./assets/images/carousel/carousel-1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?= $item_name ?></h5>
-                            <span class="fs-5 text-info">Starts From ₹<?= $item_price ?>-</span>
-                            <p class="card-text fs-5">Restaurant Name</p>
+                            <span class="fs-5 text-info">Starts From ₹<?= $item_price ?>/-</span>
+                            <p class="card-text fs-5"><?= $item_restaurant_name ?></p>
                             <a href="./menu.php?id=<?= $item_restaurant ?>" class="card-link btn btn-block btn-primary w-100">View
                                 Menu</a>
                         </div>

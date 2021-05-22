@@ -3,7 +3,10 @@ session_start();
 
 use Controllers\RegisterController;
 
-spl_autoload_register();
+require './Database/Db.php';
+require './Models/User.php';
+require './Models/Restaurant.php';
+require './Controllers/RegisterController.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user-register'])) {
     $name       = test_input($_POST["user-name"]);
@@ -21,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['restaurant-register'])
     $mobile     = test_input($_POST["restaurant-mobile"]);
     $password   = test_input($_POST["restaurant-password"]);
 
-    RegisterController::restaurantRegister($name, $mobile, $email, $password, $preferance);
+    RegisterController::restaurantRegister($name, $mobile, $email, $password);
 }
 
 function test_input($data)

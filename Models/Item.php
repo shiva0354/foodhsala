@@ -86,6 +86,7 @@ class Item
 
     public static function getByRestaurantId(int $id)
     {
+        $list = null;
         $conn = Db::getConnection();
         $stmt = $conn->prepare("SELECT `id`,`name`, `price`,`image`,`description`,`type`,`restaurant_id`,`created_at`,`updated_at` FROM `items` WHERE `restaurant_id`=?");
         $stmt->bind_param("i", $id);

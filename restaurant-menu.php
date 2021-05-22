@@ -1,13 +1,14 @@
-<!-- showing menu of a particular restaurant
-
-add to cart functionality -->
-
 <?php
+require './restaurant-session.php';
 
 use Controllers\ItemController;
 
-require './restaurant-session.php';
+require './Database/Db.php';
+require './Models/Item.php';
+require './Models/Restaurant.php';
 require './Controllers/ItemController.php';
+require './Controllers/AuthController.php';
+require './Controllers/BackController.php';
 spl_autoload_register();
 
 $items = ItemController::index();
@@ -20,13 +21,15 @@ include './Templates/message.php';
         <div class="row">
             <?php
             include './Templates/message.php';
-            foreach ($items as $item) {
-                $item_id = $item->id;
-                $item_name = $item->name;
-                $item_price = $item->price;
-                $item_description = $item->description;
-                $item_type = $item->type;
-                $item_image = $item->image;
+            if ($items) {
+                foreach ($items as $item) {
+                    $item_id = $item->id;
+                    $item_name = $item->name;
+                    $item_price = $item->price;
+                    $item_description = $item->description;
+                    $item_type = $item->type;
+                    $item_image = $item->image;
+                }
             ?>
                 <div class="col-md-4 col-sm-12 mb-3">
                     <div class="card p-2">

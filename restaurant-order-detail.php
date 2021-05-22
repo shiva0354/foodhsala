@@ -3,7 +3,11 @@ require './restaurant-session.php';
 
 use Controllers\RestaurantOrderController;
 
+require './Database/Db.php';
+require './Models/Order.php';
+require './Models/Restaurant.php';
 require './Controllers/RestaurantOrderController.php';
+require './Controllers/AuthController.php';
 spl_autoload_register();
 
 $restaurant = unserialize($_SESSION['restaurant']);

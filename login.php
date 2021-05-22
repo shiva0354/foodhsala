@@ -4,6 +4,9 @@ session_start();
 
 use Controllers\AuthController;
 
+require './Database/Db.php';
+require './Models/User.php';
+require './Models/Restaurant.php';
 require './Controllers/AuthController.php';
 
 spl_autoload_register();
@@ -55,7 +58,7 @@ include './Templates/message.php';
 
                             <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Sign in" name="user-login">
                             <hr class="my-4">
-                            <span class="fs-5"><a href="./register" style="text-decoration: none;">Register as
+                            <span class="fs-5"><a href="./register.php" style="text-decoration: none;">Register as
                                     User</a></span>
                         </form>
                     </div>
@@ -79,7 +82,7 @@ include './Templates/message.php';
 
                             <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Sign in" name="restaurant-login">
                             <hr class="my-4">
-                            <span class="fs-5"><a href="./register" style="text-decoration: none;">Register as
+                            <span class="fs-5"><a href="./register.php" style="text-decoration: none;">Register as
                                     Restaurant</a></span>
                         </form>
                     </div>

@@ -27,17 +27,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-col-md-3 col-sm-6">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./restaurant.php">Dashboard</a>
                         </li>
                         <li class="nav-col-md-3 col-sm-6">
-                            <a class="nav-link" href="./menu.php">Menu</a>
+                            <a class="nav-link" href="./restaurant-menu.php">Menu</a>
                         </li>
                         <li class="nav-col-md-3 col-sm-6">
-                            <a class="nav-link" href="./add-menu.php">Add Item</a>
+                            <a class="nav-link" href="./restaurant-add-menu.php">Add Item</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./orders.php" class="btn btn-block"><i class="fa fa-book"></i> View Orders</a>
+                        <li><a href="./restaurant-orders.php" class="btn btn-block"><i class="fa fa-book"></i> View Orders</a>
                         </li>
                         <li>
                             <form action="./logout.php" method="post">
