@@ -77,7 +77,7 @@ class Item
     public static function getByName(string $name)
     {
         $conn = Db::getConnection();
-        $stmt = $conn->prepare("SELECT items.id, items.name, items.price, items.image, items.description, items.type, items.restaurant_id, restaurants.name as restaurant_name, items.created_at, items.updated_at FROM `items` JOIN `restaurants` ON items.restaurant_id = restaurants.id WHERE items.name = ?");
+        $stmt = $conn->prepare("SELECT items.id, items.name, items.price, items.image, items.description, items.type, items.restaurant_id, restaurants.name as restaurant_name, items.created_at, items.updated_at FROM `items` JOIN `restaurants` ON items.restaurant_id = restaurants.id WHERE items.name LIKE CONCAT( '%',?,'%')");
         $stmt->bind_param('s', $name);
         $stmt->execute();
         $result = $stmt->get_result();
